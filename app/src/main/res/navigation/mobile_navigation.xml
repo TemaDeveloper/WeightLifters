@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_weeks">
+
+    <fragment
+        android:id="@+id/navigation_weeks"
+        android:name="com_gym.java_gym.weightlifters.ui.weeks.WeeksFragment"
+        android:label="Weeks"
+        tools:layout="@layout/fragment_weeks" />
+
+    <fragment
+        android:id="@+id/navigation_programs"
+        android:name="com_gym.java_gym.weightlifters.ui.programs.ProgramsFragment"
+        android:label="Programs"
+        tools:layout="@layout/fragment_programs" />
+
+    <fragment
+        android:id="@+id/navigation_stats"
+        android:name="com_gym.java_gym.weightlifters.ui.stats.StatsFragment"
+        android:label="Analytics"
+        tools:layout="@layout/fragment_stats" />
+
+
+</navigation>

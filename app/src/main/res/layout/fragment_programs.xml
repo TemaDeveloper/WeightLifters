@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.weeks.WeeksFragment"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:paddingHorizontal="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/programs"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:fontFamily="@font/pro_font_black"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_filter_program"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_search"
+            app:startIconTint="@color/red"
+            android:gravity="center">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:hint="@string/search_by_program"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/red"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            />
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_nothing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/nothing_programs"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_programs"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_program"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/add_program"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:elevation="4dp"
+            app:cornerRadius="4dp"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

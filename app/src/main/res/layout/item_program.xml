@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_program"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="8dp"
+    android:elevation="7dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/img_barbel"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/img_barbel"
+            app:tint="@color/green"
+            android:backgroundTint="@color/green"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/text_naming_of_program"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Chest"
+            android:textAllCaps="true"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

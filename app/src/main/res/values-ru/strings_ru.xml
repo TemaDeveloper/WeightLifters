@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeightLifters</string>
+    <string name="app_creator">TEMA:D</string>
+
+    <string-array name="quotes_motivation">
+
+        <item>«В этом мире есть много людей, которые тратят так много времени на то, чтобы следить за своим здоровьем, что у них не остается времени, чтобы наслаждаться этим», — Джош Биллингс.</item>
+        <item>«Важно прийти в форму, а затем не беспокоиться об этом. Я не хочу выходить на сцену и быть не в состоянии что-то делать. Не быть в хорошей физической форме для меня не работает». - Крис Корнелл</item>
+        <item>«Вещи могут прийти к тем, кто ждет, но только то, что останется от тех, кто торопится» — Авраам Линкольн.</item>
+        <item>«Упражнения — это труд без усталости». - Сэмюэл Джонсон</item>
+        <item>«Единственный человек, которым вам суждено стать, — это тот, кем вы решили быть». — Ральф Уолдо Эмерсон</item>
+        <item>«Не отказывайтесь от своей мечты, иначе ваши мечты разочаруются в вас». — Джон Вуден</item>
+        <item>«Последние три или четыре повторения — это то, что заставляет мышцы расти. Эта область боли отделяет чемпиона от того, кто не является чемпионом», — Арнольд Шварценеггер.</item>
+        <item>«Успех обычно приходит к тем, кто слишком занят, чтобы искать его». -Генри Дэвид Торо</item>
+        <item>«Я не беспризорница и никогда ею не буду. Я думаю, что это здорово, когда специалисты по фитнесу поощряют занятия фитнесом, а не получение определенной формы тела», — София Буш.</item>
+
+    </string-array>
+
+    <string name="m">Понедельник</string>
+    <string name="tu">Вторник</string>
+    <string name="we">Среда</string>
+    <string name="th">Четверг</string>
+    <string name="f">Пятница</string>
+    <string name="s">Суббота</string>
+    <string name="su">Воскресенье</string>
+
+    <string name="kg">кг.</string>
+
+    <string name="english">English</string>
+    <string name="ukranian">Український</string>
+    <string name="japanese">日本</string>
+    <string name="russian">Русский</string>
+
+    <!--on boarding-->
+    <string name="title_1">Программы &amp; Упражнения</string>
+    <string name="title_2">Недели &amp; Дни</string>
+    <string name="title_3">Аналитика</string>
+
+    <string name="description_1">Добавляйте, изменяйте, удаляйте ваши программы, как все знают программы состоят из упражнений. Каждая программа имеет собственные упражнения для выполнения. Упражнение включает в себя вес, подходы и повторения, кончно же вы сами будете определять вашу программу и упражнения в ней</string>
+    <string name="description_2">Вы можете добавить день к неделе, а также добавить свой снимок к неделе, тогда у вас будет альбом ваших снимков, чтобы проверить свой прогресс</string>
+    <string name="description_3">Every week</string>
+
+    <!--Snackbars-->
+    <string name="success_edit_program">Программа была успешно изменена</string>
+    <string name="fill_all_boxes">Заполните все поля</string>
+    <string name="fill_all_boxes_except_weight">Заполните все поля, кроме веса, если упражнение не нуждается в нем</string>
+    <string name="failed_edit_program">Программа была успешно изменeна</string>
+    <string name="smth_went_wrong">Что-то пошло не так</string>
+    <string name="add_image_to_finish">Добавьте картинку в эту неделю</string>
+    <string name="failed_to_update_ex">Упражнение не было изменино, что-то пошло не так</string>
+    <!--TEXTS-->
+    <string name="let_me_recommend">Хочу порекомендовать тебе это приложение:</string>
+    <string name="send_feedback">Отпрвить \'feedback\':</string>
+    <string name="language_changing">Изменить язык</string>
+    <string name="week_done_text">ЗАКОНЧЕНО</string>
+    <string name="week_not_done_text">НЕ ЗАКОНЧЕНО</string>
+    <string name="w">Н</string>
+    <string name="progress">Прогресс</string>
+    <string name="week">Неделя</string>
+    <string name="skip">Пропустить</string>
+    <string name="snap">Фото</string>
+    <string name="edit">Изменить</string>
+    <string name="done">Готово</string>
+    <string name="quit">Выйти</string>
+    <string name="programs">Программы</string>
+    <string name="stats">Аналитика</string>
+    <string name="weeks">Недели</string>
+    <string name="nothing_in_stats">Здесь ничего нет, вы должеы закончить неделю</string>
+    <string name="no_weeks">Добавьте неделю, чтобы начать заниматься</string>
+    <string name="stats_text_info">Листайте, приближайте и отближайте диаграмму</string>
+    <string name="nothing_programs">Добавьте программу, нажав на кнопку ниже</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="delete_ex">Удалить упражнение</string>
+    <string name="question_quit_or_not">Вы уверены, что хотите\nвыйти из приложения?</string>
+    <string name="question_delete_or_not">Вы уверены, что вы хотите удалить упражнение?</string>
+    <string name="day_addition">Добавление дня</string>
+    <string name="question_add_day_or_not">Вы уверены, что вы хотите добавить день в эту неделю? Потом вы не сможете его удалить</string>
+    <string name="motivation_quote_text">Мотивационная\nцитата</string>
+    <string name="nothing_in_week_data">Здесь ничего нет, добавьте день, нажав на кнопку \'добавить ДЕНЬ\'</string>
+    <string name="add_snap_text">Добавьте фото, чтобы видеть прогресс за каждую неделю</string>
+    <string name="nothing_in_program_data">Добавьте упражнение в программу</string>
+    <string name="update_exercise">Обновить упражнение</string>
+    <!--Buttons-->
+    <string name="add_program">Добавить программу</string>
+    <string name="add_day">Добавить день</string>
+    <string name="info">Инфо.</string>
+    <string name="day">день</string>
+    <string name="btn_no">Нет</string>
+    <string name="btn_yes">Да</string>
+    <string name="week_done">Закончить неделю</string>
+    <string name="upload_btn_snap">добавить картинку</string>
+    <string name="start">Начать</string>
+    <string name="edit_program_title">Изменить название программы</string>
+    <string name="add_exercise">Добавить Упражнение</string>
+    <string name="update_btn">Обновить</string>
+    <string name="cancel_btn">Отменить</string>
+    <!--Fields (BOXES)-->
+    <string name="search_by_program">Найти по программе</string>
+    <string name="search_by_num_of_week">Найти по номеру недели</string>
+    <string name="ex">Упр.</string>
+    <string name="repetition">Пов.</string>
+    <string name="sets">Под.</string>
+    <string name="weight">В.</string>
+    <string name="program">Программа</string>
+    <string name="field_day">День</string>
+    <string name="exercise_title">Название упражнения</string>
+    <string name="exercise_weight">Вес</string>
+    <string name="exercise_sets">Подходы</string>
+    <string name="exercise_repetition">Повторения</string>
+
+</resources>

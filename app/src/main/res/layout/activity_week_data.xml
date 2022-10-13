@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    app:statusBarBackground="@android:color/transparent"
+    tools:context=".activities.WeekDataActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            app:contentScrim="@color/red"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:statusBarScrim="@android:color/transparent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+
+                <LinearLayout
+                    android:id="@+id/lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="?android:attr/actionBarSize"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="@dimen/activity_vertical_margin"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="4dp"
+                            app:layout_anchorGravity="left"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="2dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <!--Snap of your body to see the progress-->
+                                <ImageView
+                                    android:id="@+id/img_snap"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp"
+                                    android:layout_centerInParent="true"
+                                    android:scaleType="centerCrop" />
+
+                                <ImageView
+                                    android:id="@+id/img_camera"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_camera" />
+
+                            </RelativeLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                android:fontFamily="@font/pro_font_black"
+                                android:text="@string/snap"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_snap_text"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_upload_snap"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/activity_horizontal_margin"
+                        android:backgroundTint="@color/white"
+                        android:text="@string/upload_btn_snap"
+                        android:textColor="@color/red" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/red"
+                android:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_back"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/text_title_num_week"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_toEndOf="@+id/img_back"
+                        android:fontFamily="@font/pro_font_black"
+                        android:text="Week 1"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_add_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:elevation="4dp"
+                        android:text="@string/day"
+                        android:textColor="@color/red"
+                        app:backgroundTint="@color/white"
+                        app:cornerRadius="16dp"
+                        app:icon="@drawable/ic_add"
+                        app:iconTint="@color/red" />
+
+
+                </RelativeLayout>
+
+            </Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:backgroundTint="@color/mustard_yellow"
+                android:elevation="4dp"
+                app:cardCornerRadius="4dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="16dp"
+                        android:src="@drawable/ic_rate"
+                        android:layout_gravity="center_vertical"
+                        app:tint="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/motivation_quote_text"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/text_motivation_quote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:text="If you're not sweating by the end of your workout, perhaps you aren't pushing yourself hard enough. Try to reach an 'out of breath' state at least once during your workout by incorporating high-intensity movements like sprinting, jumping jacks, burpees or squat jumps."
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--<com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                android:layout_gravity="center_horizontal"
+                app:strokeColor="@color/red"
+                android:visibility="visible"
+                app:cardCornerRadius="16dp"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginVertical="@dimen/activity_vertical_margin">-->
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorGravity="stretch"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/red"
+                app:tabTextColor="@color/black"></com.google.android.material.tabs.TabLayout>
+
+            <!--</com.google.android.material.card.MaterialCardView>-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/recycler_view_program_in_days"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_nothing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/text_nothing_found"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/nothing_in_week_data"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_week_done"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginVertical="@dimen/activity_vertical_margin"
+                android:elevation="4dp"
+                android:text="@string/week_done"
+                app:cornerRadius="4dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

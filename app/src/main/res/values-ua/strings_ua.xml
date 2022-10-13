@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeightLifters</string>
+    <string name="app_creator">TEMA:D</string>
+
+    <string-array name="quotes_motivation">
+
+        <item>«У цьому світі є багато людей, які витрачають так багато часу на те, щоб стежити за своїм здоров\'ям, що у них не залишається часу, щоб насолоджуватися цим» - Джош Біллінгс.</item>
+        <item>«Важливо прийти у форму, а потім не турбуватися про це. Я не хочу виходити на сцену і не в змозі щось робити. Не бути у добрій фізичній формі для мене не працює». - Кріс Корнелл</item>
+        <item>«Речі можуть прийти до тих, хто чекає, але тільки те, що залишиться від тих, хто поспішає» - Авраам Лінкольн.</item>
+        <item>«Вправи - це праця без втоми». - Семюел Джонсон</item>
+        <item>«Єдина людина, якою вам судилося стати, — це та, ким ви вирішили бути». - Ральф Волдо Емерсон</item>
+        <item>«Не відмовляйтеся від своєї мрії, інакше ваші мрії розчаруються у вас». - Джон Вуден</item>
+        <item>«Останні три або чотири повторення - це те, що змушує м\'язи рости. Ця галузь болю відокремлює чемпіона від того, хто не є чемпіоном», - Арнольд Шварценеггер.</item>
+        <item>«Успіх зазвичай приходить до тих, хто занадто зайнятий, щоб шукати його». -Генрі Девід Торо</item>
+        <item>«Я не безпритульниця і ніколи нею не буду. Я думаю, що це чудово, коли фахівці з фітнесу заохочують заняття фітнесом, а не отримання певної форми тіла», - Софія Буш.</item>
+
+    </string-array>
+
+    <string name="m">Понеділок</string>
+    <string name="tu">Вівторок</string>
+    <string name="we">Середа</string>
+    <string name="th">Четвер</string>
+    <string name="f">П\'ятниця</string>
+    <string name="s">Субота</string>
+    <string name="su">Неділя</string>
+
+    <string name="kg">кг.</string>
+
+    <string name="english">English</string>
+    <string name="ukranian">Український</string>
+    <string name="japanese">日本</string>
+    <string name="russian">Русский</string>
+
+    <!--on boarding-->
+    <string name="title_1">Програми &amp; Вправи</string>
+    <string name="title_2">Тижні &amp; Дні</string>
+    <string name="title_3">Аналітика</string>
+
+    <string name="description_1">Додавайте, змінюйте, видаляйте ваші програми, як усі знають програми складаються з вправ. Кожна програма має власні вправи до виконання. Вправа включає в себе вага, підходи та повторення, звичайно ж ви самі визначатимете вашу програму та вправи в ній</string>
+    <string name="description_2">Ви можете додати день до тижня, а також додати свій знімок до тижня, тоді у вас буде альбом ваших знімків, щоб перевірити свій прогрес</string>
+    <string name="description_3">Every week</string>
+
+    <!--Snackbars-->
+    <string name="success_edit_program">Програма була успішно змінена</string>
+    <string name="fill_all_boxes">Заповніть всі поля</string>
+    <string name="fill_all_boxes_except_weight">Заповніть всі поля, крім ваги, якщо вправа не потребує її</string>
+    <string name="failed_edit_program">Програма була успішно змінена</string>
+    <string name="smth_went_wrong">Щось пішло не так</string>
+    <string name="add_image_to_finish">Додати картинку цього тижня</string>
+    <string name="failed_to_update_ex">Вправа не була змінена, щось пішло не так</string>
+    <!--TEXTS-->
+    <string name="let_me_recommend">Хочу порекомендувати тобі цю програму:</string>
+    <string name="send_feedback">Надіслати \'feedback\':</string>
+    <string name="language_changing">Змінити мову</string>
+    <string name="week_done_text">ЗАКІНЧЕНО</string>
+    <string name="week_not_done_text">НЕ ЗАКІНЧЕНО</string>
+    <string name="w">Т</string>
+    <string name="progress">Прогрес</string>
+    <string name="week">Тиждень</string>
+    <string name="skip">Пропустити</string>
+    <string name="snap">Фото</string>
+    <string name="edit">Змінити</string>
+    <string name="done">Готово</string>
+    <string name="quit">Вийти</string>
+    <string name="programs">Програми</string>
+    <string name="stats">Аналітика</string>
+    <string name="weeks">Тижні</string>
+    <string name="nothing_in_stats">Тут нічого немає, ви повинні закінчити тиждень</string>
+    <string name="no_weeks">Додати тиждень, щоб почати займатися</string>
+    <string name="stats_text_info">Гортайте, наближайте та наближайте діаграму</string>
+    <string name="nothing_programs">Додати програму, натиснувши на кнопку нижче</string>
+    <string name="share_app">Поділитись додатком</string>
+    <string name="feedback">Зворотній зв\'язок</string>
+    <string name="delete_ex">Видалити вправу</string>
+    <string name="question_quit_or_not">Ви впевнені, що хочете вийти з програми?</string>
+    <string name="question_delete_or_not">Ви впевнені, що ви хочете видалити вправу?</string>
+    <string name="day_addition">Додавання дня</string>
+    <string name="question_add_day_or_not">Ви впевнені, що ви хочете додати день цього тижня? Потім ви не зможете його видалити</string>
+    <string name="motivation_quote_text">Мотиваційна цитати</string>
+    <string name="nothing_in_week_data">Тут нічого немає, додайте день, натиснувши на кнопку додати ДЕНЬ</string>
+    <string name="add_snap_text">Додати фото, щоб бачити прогрес за кожен тиждень</string>
+    <string name="nothing_in_program_data">Додайте вправу до програми</string>
+    <string name="update_exercise">Оновити вправу</string>
+    <!--Buttons-->
+    <string name="add_program">Додати програму</string>
+    <string name="add_day">Додати день</string>
+    <string name="info">Інфо.</string>
+    <string name="day">день</string>
+    <string name="btn_no">Ні</string>
+    <string name="btn_yes">Так</string>
+    <string name="week_done">Закінчити тиждень</string>
+    <string name="upload_btn_snap">додати картинку</string>
+    <string name="start">Почати</string>
+    <string name="edit_program_title">Змінити назву програми</string>
+    <string name="add_exercise">Додати Вправу</string>
+    <string name="update_btn">Оновити</string>
+    <string name="cancel_btn">Скасувати</string>
+    <!--Fields (BOXES)-->
+    <string name="search_by_program">Знайти за програмою</string>
+    <string name="search_by_num_of_week">Знайти за номером тижня</string>
+    <string name="ex">Упр.</string>
+    <string name="repetition">Пов.</string>
+    <string name="sets">Под.</string>
+    <string name="weight">В.</string>
+    <string name="program">Програма</string>
+    <string name="field_day">День</string>
+    <string name="exercise_title">Назва вправи</string>
+    <string name="exercise_weight">Вага</string>
+    <string name="exercise_sets">Підходи</string>
+    <string name="exercise_repetition">Повторения</string>
+
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeightLifters</string>
+    <string name="app_creator">TEMA:D</string>
+
+    <string-array name="quotes_motivation">
+
+        <item>"There's a lot of people in this world who spend so much time watching their health that they haven't the time to enjoy it."- Josh Billings</item>
+        <item>"What's important is to get into shape and then not to have to worry about it. I don't want to get on stage and not being able to do something. Not being physically fit doesn't work for me." - Chris Cornell</item>
+        <item>"Things may come to those who wait, but only the things left by those who hustle."- Abraham Lincoln</item>
+        <item>"Exercise is labor without weariness." - Samuel Johnson</item>
+        <item>"The only person you are destined to become is the person you decide to be." – Ralph Waldo Emerson</item>
+        <item>"Don’t give up on your dreams, or your dreams will give up on you." – John Wooden</item>
+        <item>"The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion."- Arnold Schwarzenegger</item>
+        <item>"Success usually comes to those who are too busy to be looking for it." -Henry David Thoreau</item>
+        <item>"I'm not a waif-y girl and never will be. I think it's healthy when fitness experts encourage fitness rather than getting a certain body shape."- Sophia Bush</item>
+
+    </string-array>
+
+    <string name="m">Monday</string>
+    <string name="tu">Tuesday</string>
+    <string name="we">Wednesday</string>
+    <string name="th">Thursday</string>
+    <string name="f">Friday</string>
+    <string name="s">Saturday</string>
+    <string name="su">Sunday</string>
+
+    <string name="kg">kg.</string>
+
+    <string name="english">English</string>
+    <string name="ukranian">Український</string>
+    <string name="japanese">日本</string>
+    <string name="russian">Русский</string>
+
+    <!--on boarding-->
+    <string name="title_1">Programs &amp; Exercises</string>
+    <string name="title_2">Weeks &amp; Days</string>
+    <string name="title_3">Stats</string>
+
+    <string name="description_1">Add, edit, delete your own programs, as everybody knows programs consist of exercises. Each program has it\'s own exercise to do. Exercise includes weight, sets and repetitions, it is up to you</string>
+    <string name="description_2">You are able to add the day to the week, also add your snap to the week, then you will have the album of your snaps to check your progress</string>
+    <string name="description_3">As you change your program exercises (weight, sets, repetitions), your stats will be increased or decreased</string>
+
+    <!--Snackbars-->
+    <string name="success_edit_program">Program was successfully edited</string>
+    <string name="fill_all_boxes">Fill all of the boxes</string>
+    <string name="fill_all_boxes_except_weight">Fill all of the boxes, except weight if ex. does not require any weight</string>
+    <string name="failed_edit_program">Program was successfully edited</string>
+    <string name="smth_went_wrong">Something went wrong</string>
+    <string name="add_image_to_finish">Add the image to finish your week</string>
+    <string name="failed_to_update_ex">The exercise was failed to update</string>
+    <!--TEXTS-->
+    <string name="let_me_recommend">Let me recommend you this application</string>
+    <string name="send_feedback">Send Feedback:</string>
+    <string name="language_changing">Change language</string>
+    <string name="week_done_text">DONE</string>
+    <string name="week_not_done_text">NOT DONE</string>
+    <string name="w">W</string>
+    <string name="progress">Progress</string>
+    <string name="week">Week</string>
+    <string name="skip">Skip</string>
+    <string name="snap">snap</string>
+    <string name="edit">Edit</string>
+    <string name="done">Done</string>
+    <string name="quit">Quit</string>
+    <string name="programs">Programs</string>
+    <string name="stats">Stats</string>
+    <string name="weeks">Weeks</string>
+    <string name="nothing_in_stats">Nothing is here, you supposed to done one week</string>
+    <string name="no_weeks">Add the week to start working out</string>
+    <string name="stats_text_info">Scroll, zoom in and zoom out the diagram</string>
+    <string name="nothing_programs">Add program, clicking the button below</string>
+    <string name="share_app">Share app</string>
+    <string name="feedback">Feedback</string>
+    <string name="delete_ex">Delete Exercise</string>
+    <string name="question_quit_or_not">Are you sure that you want\nto exit the App?</string>
+    <string name="question_delete_or_not">Are you sure that you want\nto delete the exercise?</string>
+    <string name="day_addition">Day Addition</string>
+    <string name="question_add_day_or_not">Are you sure that you want to add the day to this week because then you will not able to delete that?</string>
+    <string name="motivation_quote_text">Motivation Quote</string>
+    <string name="nothing_in_week_data">Nothing here, add the day, clicking \'add DAY\' button</string>
+    <string name="add_snap_text">Add your snap to see the progress on your album</string>
+    <string name="nothing_in_program_data">Add the exercise to your program</string>
+    <string name="update_exercise">Update exercise</string>
+    <!--Buttons-->
+    <string name="add_program">add program</string>
+    <string name="add_day">add day</string>
+    <string name="info">Info</string>
+    <string name="day">day</string>
+    <string name="btn_no">No</string>
+    <string name="btn_yes">Yes</string>
+    <string name="week_done">Week is done</string>
+    <string name="upload_btn_snap">upload snap</string>
+    <string name="start">Let\'s start</string>
+    <string name="edit_program_title">Edit Program title</string>
+    <string name="add_exercise">Add Exercise</string>
+    <string name="update_btn">update</string>
+    <string name="cancel_btn">Cancel</string>
+    <!--Fields (BOXES)-->
+    <string name="search_by_program">Search by program</string>
+    <string name="search_by_num_of_week">Search by no. of week</string>
+    <string name="ex">Ex.</string>
+    <string name="repetition">Rep.</string>
+    <string name="sets">Sets</string>
+    <string name="weight">W.</string>
+    <string name="program">Program</string>
+    <string name="field_day">Day</string>
+    <string name="exercise_title">Naming Ex.</string>
+    <string name="exercise_weight">Weight</string>
+    <string name="exercise_sets">Sets</string>
+    <string name="exercise_repetition">Repetitions</string>
+
+</resources>

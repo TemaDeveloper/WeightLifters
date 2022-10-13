@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.ProgramDataActivity">
+
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        android:contentInsetStart="0dp"
+        app:layout_collapseMode="pin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_back"
+                app:tint="@color/red" />
+
+            <EditText
+                android:id="@+id/text_program_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHEST"
+                android:singleLine="true"
+                android:textColor="@color/red"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_centerInParent="true"
+                android:backgroundTint="@color/red"
+                android:fontFamily="@font/pro_font_black"/>
+
+
+            <TextView
+                android:id="@+id/text_show_actions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:background="@drawable/background_text_edit"
+                android:padding="7dp"
+                android:text="@string/edit"
+                android:textAllCaps="true"
+                android:textColor="@color/red"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/fab_edit_program_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/edit_program_title"
+                app:icon="@drawable/ic_edit"
+                app:iconTint="@color/white"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/mustard_yellow"/>
+
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_nothing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:text="@string/nothing_in_program_data"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_program_ex"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:layout_margin="@dimen/activity_vertical_margin" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_exercise"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/add_exercise"
+                android:backgroundTint="@color/red"
+                />
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

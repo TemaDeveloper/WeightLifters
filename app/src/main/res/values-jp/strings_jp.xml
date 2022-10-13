@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeightLifters</string>
+    <string name="app_creator">TEMA:D</string>
+
+    <string-array name="quotes_motivation">
+
+        <item>「この世界には、健康管理に多くの時間を費やしているため、楽しむ時間がない人がたくさんいます。」 - ジョシュ・ビリングス.</item>
+        <item>「重要なことは、体調を整えてから心配しないことです。 ステージに上がりたくないし、何もできない。 体調が良くないことは私にはうまくいきません。」 - クリス・コーネル</item>
+        <item>「待っている人には物事がやってくるかもしれませんが、急いでいる人に残されたものだけです」 - エイブラハム・リンカーン.</item>
+        <item>「運動は疲労のない労働です。」 - サミュエル・ジョンソン</item>
+        <item>「あなたが運命づけられているのは、あなたが選択した人だけです。」 — ラルフ・ワルド・エマーソン</item>
+        <item>「あなたの夢をあきらめないでください。あなたの夢はあなたをあきらめます。」 — ジョン・ウッデン</item>
+        <item>「筋肉を成長させるのは、最後の 3 ～ 4 回の繰り返しです。 この痛みの領域は、チャンピオンと非チャンピオンを分けます。」 – アーノルド・シュワルツェネッガー</item>
+        <item>「成功は通常、忙しすぎてそれを探すことができない人にやってくる.」 -ヘンリー・デヴィッド・ソロー</item>
+        <item>「私はホームレスの子供ではありませんし、今後もそうなることはありません。 フィットネスの専門家が特定の体型を整えることよりもフィットネスを奨励するのは素晴らしいことだと思います." - ソフィア・ブッシュ</item>
+
+    </string-array>
+
+    <string name="m">月曜日</string>
+    <string name="tu">火曜日</string>
+    <string name="we">水曜日</string>
+    <string name="th">木曜日</string>
+    <string name="f">金曜日</string>
+    <string name="s">土曜日</string>
+    <string name="su">日曜日</string>
+
+    <string name="kg">kg.</string>
+
+    <string name="english">English</string>
+    <string name="ukranian">Український</string>
+    <string name="japanese">日本</string>
+    <string name="russian">Русский</string>
+
+    <!--on boarding-->
+    <string name="title_1">プログラムと演習</string>
+    <string name="title_2">週と日</string>
+    <string name="title_3">分析</string>
+
+    <string name="description_1">プログラムが演習で構成されていることは誰もが知っているので、プログラムを追加、変更、削除します。 各プログラムには、実行する独自の演習があります。 エクササイズには体重、アプローチ、繰り返しが含まれます。もちろん、プログラムとその中のエクササイズを自分で決定します。</string>
+    <string name="description_2">1 日を 1 週間に追加したり、1 週間に写真を追加したりできます。そうすれば、写真のアルバムを作成して進捗状況を確認できます。</string>
+    <string name="description_3">Every week</string>
+
+    <!--Snackbars-->
+    <string name="success_edit_program">プログラムは正常に変更されました</string>
+    <string name="fill_all_boxes">すべてのフィールドに入力してください</string>
+    <string name="fill_all_boxes_except_weight">エクササイズで必要ない場合は、体重以外のすべての欄に記入してください</string>
+    <string name="failed_edit_program">プログラムは正常に変更されました</string>
+    <string name="smth_went_wrong">エラーが発生しました</string>
+    <string name="add_image_to_finish">今週の写真を追加</string>
+    <string name="failed_to_update_ex">演習は変更されませんでした。問題が発生しました</string>
+    <!--TEXTS-->
+    <string name="let_me_recommend">このアプリケーションをお勧めします：</string>
+    <string name="send_feedback">送信 \'feedback\':</string>
+    <string name="language_changing">言語を変更する</string>
+    <string name="week_done_text">終わりました</string>
+    <string name="week_not_done_text">終了していません</string>
+    <string name="w">一週間</string>
+    <string name="progress">進捗</string>
+    <string name="week">一週間</string>
+    <string name="skip">スキップ</string>
+    <string name="snap">写真</string>
+    <string name="edit">変化する</string>
+    <string name="done">準備</string>
+    <string name="quit">外出</string>
+    <string name="programs">プログラム</string>
+    <string name="stats">分析</string>
+    <string name="weeks">週間</string>
+    <string name="nothing_in_stats">ここには何もありません、あなたはその週を終わらせなければなりません</string>
+    <string name="no_weeks">開始するには 1 週間追加してください</string>
+    <string name="stats_text_info">図をスワイプ、ズームイン、ズームアウト</string>
+    <string name="nothing_programs">下のボタンをクリックしてプログラムを追加します</string>
+    <string name="share_app">アプリを共有</string>
+    <string name="feedback">フィードバック</string>
+    <string name="delete_ex">エクササイズを削除</string>
+    <string name="question_quit_or_not">アプリケーションを\n終了してもよろしいですか?</string>
+    <string name="question_delete_or_not">エクササイズを削除してもよろしいですか？</string>
+    <string name="day_addition">1日追加</string>
+    <string name="question_add_day_or_not">今週に 1 日追加してもよろしいですか？ そうすると、削除できなくなります。</string>
+    <string name="motivation_quote_text">動機付けの引用</string>
+    <string name="nothing_in_week_data">ここには何もありません。「日を追加」ボタンをクリックして日を追加してください</string>
+    <string name="add_snap_text">写真を追加して、毎週の進捗状況を確認してください</string>
+    <string name="nothing_in_program_data">プログラムにエクササイズを追加する</string>
+    <string name="update_exercise">演習の更新</string>
+    <!--Buttons-->
+    <string name="add_program">プログラムを追加する</string>
+    <string name="add_day">日を追加</string>
+    <string name="info">情報。</string>
+    <string name="day">日</string>
+    <string name="btn_no">いいえ</string>
+    <string name="btn_yes">はい</string>
+    <string name="week_done">週を終える</string>
+    <string name="upload_btn_snap">画像を追加</string>
+    <string name="start">始める</string>
+    <string name="edit_program_title">プログラム名の変更</string>
+    <string name="add_exercise">エクササイズを追加</string>
+    <string name="update_btn">リフレッシュ</string>
+    <string name="cancel_btn">キャンセル</string>
+    <!--Fields (BOXES)-->
+    <string name="search_by_program">番組から探す</string>
+    <string name="search_by_num_of_week">週番号で検索</string>
+    <string name="ex">練習</string>
+    <string name="repetition">繰り返し</string>
+    <string name="sets">アプローチ</string>
+    <string name="weight">重み</string>
+    <string name="program">プログラム</string>
+    <string name="field_day">日</string>
+    <string name="exercise_title">演習名</string>
+    <string name="exercise_weight">重み</string>
+    <string name="exercise_sets">アプローチ</string>
+    <string name="exercise_repetition">繰り返し</string>
+</resources>

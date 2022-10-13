@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.WeightLifters.Fullscreen" parent="Theme.WeightLifters">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">
+            shortEdges <!-- default, shortEdges, or never -->
+        </item>
+    </style>
+</resources>
