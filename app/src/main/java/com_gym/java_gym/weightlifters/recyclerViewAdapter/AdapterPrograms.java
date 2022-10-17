@@ -72,11 +72,7 @@ public class AdapterPrograms extends RecyclerView.Adapter<AdapterPrograms.ViewHo
             super(itemView);
 
             namingOfProgram = itemView.findViewById(R.id.text_naming_of_program);
-            int[] array = context.getResources().getIntArray(R.array.colors);
-            int randomStr = array[new Random().nextInt(array.length)];
             imgBarbel = itemView.findViewById(R.id.img_barbel);
-            imgBarbel.setImageTintList(ColorStateList.valueOf(randomStr));
-            namingOfProgram.setTextColor(randomStr);
 
         }
     }

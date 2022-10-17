@@ -34,13 +34,13 @@
                 android:id="@+id/text_program_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CHEST"
-                android:singleLine="true"
-                android:textColor="@color/red"
-                android:theme="@style/MyEditTextTheme"
                 android:layout_centerInParent="true"
                 android:backgroundTint="@color/red"
-                android:fontFamily="@font/pro_font_black"/>
+                android:fontFamily="@font/pro_font_black"
+                android:singleLine="true"
+                android:text="CHEST"
+                android:textColor="@color/red"
+                android:theme="@style/MyEditTextTheme" />
 
 
             <TextView

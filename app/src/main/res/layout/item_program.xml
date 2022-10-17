@@ -24,8 +24,8 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:src="@drawable/img_barbel"
-            app:tint="@color/green"
-            android:backgroundTint="@color/green"
+            app:tint="@color/red"
+            android:backgroundTint="@color/red"
             android:layout_gravity="center"/>
 
         <TextView
@@ -36,7 +36,7 @@
             android:gravity="center"
             android:text="Chest"
             android:textAllCaps="true"
-            android:textColor="@color/green"
+            android:textColor="@color/red"
             android:textSize="20sp" />
 
     </LinearLayout>

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import com_gym.java_gym.weightlifters.R;
 import com_gym.java_gym.weightlifters.database.DatabaseHelper;
+import com_gym.java_gym.weightlifters.models.Progress;
 import com_gym.java_gym.weightlifters.models.Week;
 import com_gym.java_gym.weightlifters.recyclerViewAdapter.AdapterWeeks;
 
@@ -52,6 +53,8 @@ public class WeeksFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 db.addWeek(new Week(db.getEveryWeek().size() + 1, getResources().getString(R.string.week_not_done_text), null));
+                Progress progress = new Progress(db.getEveryWeek().size(), 0f, 0, 0, 0);
+                db.addProgress(progress);
                 showWeeks();
                 adapter.notifyDataSetChanged();
             }

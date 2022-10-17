@@ -40,7 +40,7 @@
 
     <string name="description_1">Додавайте, змінюйте, видаляйте ваші програми, як усі знають програми складаються з вправ. Кожна програма має власні вправи до виконання. Вправа включає в себе вага, підходи та повторення, звичайно ж ви самі визначатимете вашу програму та вправи в ній</string>
     <string name="description_2">Ви можете додати день до тижня, а також додати свій знімок до тижня, тоді у вас буде альбом ваших знімків, щоб перевірити свій прогрес</string>
-    <string name="description_3">Every week</string>
+    <string name="description_3">У статистиці є діаграма, це ваш прогрес, якщо ви хочете змінити свій прогрес, є ваші тижні, натисніть на один</string>
 
     <!--Snackbars-->
     <string name="success_edit_program">Програма була успішно змінена</string>
@@ -51,7 +51,9 @@
     <string name="add_image_to_finish">Додати картинку цього тижня</string>
     <string name="failed_to_update_ex">Вправа не була змінена, щось пішло не так</string>
     <!--TEXTS-->
+    <string name="days">Дні:</string>
     <string name="let_me_recommend">Хочу порекомендувати тобі цю програму:</string>
+    <string name="weekly_progress">Тижневий прогрес</string>
     <string name="send_feedback">Надіслати \'feedback\':</string>
     <string name="language_changing">Змінити мову</string>
     <string name="week_done_text">ЗАКІНЧЕНО</string>
@@ -84,6 +86,7 @@
     <string name="nothing_in_program_data">Додайте вправу до програми</string>
     <string name="update_exercise">Оновити вправу</string>
     <!--Buttons-->
+    <string name="add_progress">додати прогрес</string>
     <string name="add_program">Додати програму</string>
     <string name="add_day">Додати день</string>
     <string name="info">Інфо.</string>

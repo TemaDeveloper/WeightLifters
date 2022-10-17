@@ -65,7 +65,7 @@
                 android:text="Not Done"
                 android:textAllCaps="true"
                 android:textColor="@color/red"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 

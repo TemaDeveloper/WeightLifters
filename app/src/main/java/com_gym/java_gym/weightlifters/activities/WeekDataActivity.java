@@ -17,18 +17,16 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import com_gym.java_gym.weightlifters.R;
 import com_gym.java_gym.weightlifters.database.DatabaseHelper;
 import com_gym.java_gym.weightlifters.dialogs.BottomSheetAddDayToWeekFragment;
 import com_gym.java_gym.weightlifters.models.Day;
+import com_gym.java_gym.weightlifters.models.Progress;
 import com_gym.java_gym.weightlifters.recyclerViewAdapter.AdapterDays;
 
 public class WeekDataActivity extends AppCompatActivity implements BottomSheetAddDayToWeekFragment.OnInputSelected {
@@ -75,7 +73,6 @@ public class WeekDataActivity extends AppCompatActivity implements BottomSheetAd
 
         getIntentFromAdapter();
         chooseRandomQuote();
-
         showDaysInViewPager();
 
 
@@ -123,12 +120,22 @@ public class WeekDataActivity extends AppCompatActivity implements BottomSheetAd
             imgCamera.setVisibility(View.VISIBLE);
         } else {
             imgCamera.setVisibility(View.GONE);
-            Glide.with(WeekDataActivity.this)
-                    .load(imageIntent)
-                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
-                    .apply(RequestOptions.noAnimation())
-                    .thumbnail(0.3f)
-                    .into(imgSnapInCardView);
+
+            for(int i = 0; i < db.getEveryWeek().size(); i++){
+                String dbIdWeek = String.valueOf(db.getEveryWeek().get(i).getNumOfWeek());
+                if(dbIdWeek.equals(numOfWeek)){
+                    String img = db.getEveryWeek().get(i).getImg();
+                    Log.d("SNAP_WEEK_DATA", "SNAP --- " + img);
+                    imageUri = Uri.parse(img);
+
+                    Glide.with(WeekDataActivity.this)
+                            .load(imageUri)
+                            .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
+                            .apply(RequestOptions.noAnimation())
+                            .thumbnail(0.3f)
+                            .into(imgSnapInCardView);
+                }
+            }
         }
 
         if (weekDone.equals(getResources().getString(R.string.week_done_text)))
@@ -140,7 +147,6 @@ public class WeekDataActivity extends AppCompatActivity implements BottomSheetAd
         //widgets init
         textTitleNumWeek = findViewById(R.id.text_title_num_week);
         relativeNothing = findViewById(R.id.relative_layout_nothing);
-        //cardViewDays = findViewById(R.id.card_view_days);
         btnWeekDone = findViewById(R.id.btn_week_done);
         btnUploadSnap = findViewById(R.id.btn_upload_snap);
         imgBack = findViewById(R.id.img_back);
@@ -166,9 +172,10 @@ public class WeekDataActivity extends AppCompatActivity implements BottomSheetAd
                 } else {
                     boolean result = db.updateWeek(numOfWeek, getResources().getString(R.string.week_done_text), img);
                     btnWeekDone.setEnabled(false);
-                    if(result == true){
+                    if (result == true) {
+                        db.updateProgress(numOfWeek, 1);
                         startActivity(new Intent(WeekDataActivity.this, MainActivity.class));
-                    }else{
+                    } else {
                         Snackbar snackbar = Snackbar.make(view, getResources().getString(R.string.smth_went_wrong), Snackbar.LENGTH_LONG);
                         snackbar.setTextColor(getResources().getColor(R.color.white));
                         snackbar.setBackgroundTint(getResources().getColor(R.color.red));
@@ -238,8 +245,11 @@ public class WeekDataActivity extends AppCompatActivity implements BottomSheetAd
                 tabsDays.addTab(tabsDays.newTab().setText(weekDayIteration));
                 db.addDay(day);
 
+                relativeNothing.setVisibility(View.GONE);
+
                 AdapterDays adapter = new AdapterDays(db.getEveryDay(Integer.parseInt(numOfWeek)), WeekDataActivity.this);
                 viewPagerDays.setAdapter(adapter);
+
             }
         }
     }

@@ -40,9 +40,10 @@
 
     <string name="description_1">Добавляйте, изменяйте, удаляйте ваши программы, как все знают программы состоят из упражнений. Каждая программа имеет собственные упражнения для выполнения. Упражнение включает в себя вес, подходы и повторения, кончно же вы сами будете определять вашу программу и упражнения в ней</string>
     <string name="description_2">Вы можете добавить день к неделе, а также добавить свой снимок к неделе, тогда у вас будет альбом ваших снимков, чтобы проверить свой прогресс</string>
-    <string name="description_3">Every week</string>
+    <string name="description_3">В аналитике есть диаграмма, это ваш прогресс, если вы хотите изменить свой прогресс, там ваши недели, нажмите на одну</string>
 
     <!--Snackbars-->
+    <string name="weekly_progress">Недельный прогресс</string>
     <string name="success_edit_program">Программа была успешно изменена</string>
     <string name="fill_all_boxes">Заполните все поля</string>
     <string name="fill_all_boxes_except_weight">Заполните все поля, кроме веса, если упражнение не нуждается в нем</string>
@@ -51,6 +52,8 @@
     <string name="add_image_to_finish">Добавьте картинку в эту неделю</string>
     <string name="failed_to_update_ex">Упражнение не было изменино, что-то пошло не так</string>
     <!--TEXTS-->
+    <string name="total_progress_of_week">В этом упражнении я добаил/убрал:</string>
+    <string name="days">Дни:</string>
     <string name="let_me_recommend">Хочу порекомендовать тебе это приложение:</string>
     <string name="send_feedback">Отпрвить \'feedback\':</string>
     <string name="language_changing">Изменить язык</string>
@@ -84,6 +87,7 @@
     <string name="nothing_in_program_data">Добавьте упражнение в программу</string>
     <string name="update_exercise">Обновить упражнение</string>
     <!--Buttons-->
+    <string name="add_progress">добавить прогресс</string>
     <string name="add_program">Добавить программу</string>
     <string name="add_day">Добавить день</string>
     <string name="info">Инфо.</string>

@@ -38,7 +38,7 @@
 
     <string name="description_1">Add, edit, delete your own programs, as everybody knows programs consist of exercises. Each program has it\'s own exercise to do. Exercise includes weight, sets and repetitions, it is up to you</string>
     <string name="description_2">You are able to add the day to the week, also add your snap to the week, then you will have the album of your snaps to check your progress</string>
-    <string name="description_3">As you change your program exercises (weight, sets, repetitions), your stats will be increased or decreased</string>
+    <string name="description_3">In stats, there are a diagram, it is your progress, if you want to change your progress, there are your weeks, click on one</string>
 
     <!--Snackbars-->
     <string name="success_edit_program">Program was successfully edited</string>
@@ -49,6 +49,9 @@
     <string name="add_image_to_finish">Add the image to finish your week</string>
     <string name="failed_to_update_ex">The exercise was failed to update</string>
     <!--TEXTS-->
+    <string name="total_progress_of_week">In this ex. I add/remove some:</string>
+    <string name="days">Days:</string>
+    <string name="weekly_progress">Weekly progress</string>
     <string name="let_me_recommend">Let me recommend you this application</string>
     <string name="send_feedback">Send Feedback:</string>
     <string name="language_changing">Change language</string>
@@ -82,6 +85,7 @@
     <string name="nothing_in_program_data">Add the exercise to your program</string>
     <string name="update_exercise">Update exercise</string>
     <!--Buttons-->
+    <string name="add_progress">add progress</string>
     <string name="add_program">add program</string>
     <string name="add_day">add day</string>
     <string name="info">Info</string>
@@ -108,7 +112,8 @@
     <string name="exercise_weight">Weight</string>
     <string name="exercise_sets">Sets</string>
     <string name="exercise_repetition">Repetitions</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -39,7 +39,7 @@
 
     <string name="description_1">プログラムが演習で構成されていることは誰もが知っているので、プログラムを追加、変更、削除します。 各プログラムには、実行する独自の演習があります。 エクササイズには体重、アプローチ、繰り返しが含まれます。もちろん、プログラムとその中のエクササイズを自分で決定します。</string>
     <string name="description_2">1 日を 1 週間に追加したり、1 週間に写真を追加したりできます。そうすれば、写真のアルバムを作成して進捗状況を確認できます。</string>
-    <string name="description_3">Every week</string>
+    <string name="description_3">統計には、図があります。それはあなたの進行状況です。進行状況を変更したい場合は、週があります。1 つをクリックしてください。</string>
 
     <!--Snackbars-->
     <string name="success_edit_program">プログラムは正常に変更されました</string>
@@ -50,6 +50,9 @@
     <string name="add_image_to_finish">今週の写真を追加</string>
     <string name="failed_to_update_ex">演習は変更されませんでした。問題が発生しました</string>
     <!--TEXTS-->
+    <string name="total_progress_of_week">この演習では、以下を追加または削除しました。</string>
+    <string name="days">日々:</string>
+    <string name="weekly_progress">毎週の進行状況</string>
     <string name="let_me_recommend">このアプリケーションをお勧めします：</string>
     <string name="send_feedback">送信 \'feedback\':</string>
     <string name="language_changing">言語を変更する</string>
@@ -83,6 +86,7 @@
     <string name="nothing_in_program_data">プログラムにエクササイズを追加する</string>
     <string name="update_exercise">演習の更新</string>
     <!--Buttons-->
+    <string name="add_progress">進行状況を追加</string>
     <string name="add_program">プログラムを追加する</string>
     <string name="add_day">日を追加</string>
     <string name="info">情報。</string>

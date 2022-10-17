@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -20,11 +23,13 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com_gym.java_gym.weightlifters.R;
 import com_gym.java_gym.weightlifters.database.DatabaseHelper;
 import com_gym.java_gym.weightlifters.databinding.FragmentStatsBinding;
-import com_gym.java_gym.weightlifters.models.WeekProgress;
+import com_gym.java_gym.weightlifters.models.Progress;
+import com_gym.java_gym.weightlifters.recyclerViewAdapter.AdapterWeeksProgress;
 
 
 public class StatsFragment extends Fragment {
@@ -33,11 +38,15 @@ public class StatsFragment extends Fragment {
     private BarChart chart;
     private ArrayList<BarEntry> entries;
     private ArrayList<String> labelsNames;
-    private ArrayList<WeekProgress> weeksProgress = new ArrayList<>();
     private TextView textZoom;
     private RelativeLayout relativeNothing;
 
+    private RecyclerView recyclerViewWeeks;
+    private AdapterWeeksProgress adapterWeeks;
+
     private DatabaseHelper db;
+
+    private List<Progress> progressList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,33 +55,28 @@ public class StatsFragment extends Fragment {
         binding = FragmentStatsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        chart = root.findViewById(R.id.bar_progress_week);
-        relativeNothing = root.findViewById(R.id.relative_layout_nothing);
-        textZoom = root.findViewById(R.id.text_zoom);
+        init(root);
 
         db = new DatabaseHelper(getContext());
+
+        adapterWeeks = new AdapterWeeksProgress(db.getEveryWeek(), getContext());
+        recyclerViewWeeks.setAdapter(adapterWeeks);
 
         entries = new ArrayList<>();
         labelsNames = new ArrayList<>();
 
-        countProgress();
+        fillWeekProgress();
 
-
-        for (int i = 0; i < weeksProgress.size(); i++) {
-            String week = weeksProgress.get(i).getNumOfWeek() + " " + getResources().getString(R.string.w);
-            int progress = weeksProgress.get(i).getProgress();
-            entries.add(new BarEntry(i, progress));
-            labelsNames.add(week);
-        }
-
-        if(weeksProgress.size() == 0){
+        if (progressList == null) {
             relativeNothing.setVisibility(View.VISIBLE);
             chart.setVisibility(View.GONE);
             textZoom.setVisibility(View.GONE);
-        }else{
+            recyclerViewWeeks.setVisibility(View.GONE);
+        } else {
             relativeNothing.setVisibility(View.GONE);
             chart.setVisibility(View.VISIBLE);
             textZoom.setVisibility(View.VISIBLE);
+            recyclerViewWeeks.setVisibility(View.VISIBLE);
         }
 
         BarDataSet barDataSet = new BarDataSet(entries, getResources().getString(R.string.progress));
@@ -99,29 +103,32 @@ public class StatsFragment extends Fragment {
         return root;
     }
 
-    /*private void fillWeekProgress(){
-        weeksProgress.clear();
-        weeksProgress.add(new WeekProgress(1, 1));
-        weeksProgress.add(new WeekProgress(2, 2));
-        weeksProgress.add(new WeekProgress(3, 3));
-        weeksProgress.add(new WeekProgress(4, 1));
-        weeksProgress.add(new WeekProgress(5, 4));
-    }*/
-    private void countProgress() {
-        db = new DatabaseHelper(getContext());
-        for (int i = 0; i < db.getEveryWeek().size(); i++) {
-            try {
-                int programID = db.getEveryDay(db.getEveryWeek().get(i).getNumOfWeek()).get(i).getIdProgram();
-                for(int j = 0; j < db.getEveryDay(db.getEveryWeek().get(i).getNumOfWeek()).size(); j++){
-                    int s = Integer.parseInt(db.getEveryExercise(programID).get(j).getSets());
-                    int r = Integer.parseInt(db.getEveryExercise(programID).get(j).getRepetition());
-                    Log.d("SETS_REP ", s + " " + r);
-                    int totalProgressOfWeek = (s + r) / db.getEveryDay(db.getEveryWeek().get(i).getNumOfWeek()).size();
-                    weeksProgress.add(new WeekProgress(db.getEveryWeek().get(i).getNumOfWeek(), totalProgressOfWeek));
-                }
-            } catch (IndexOutOfBoundsException e) {
-            }
-        }
+    private void init(View view) {
+        recyclerViewWeeks = view.findViewById(R.id.recycler_view_weeks);
+        chart = view.findViewById(R.id.bar_progress_week);
+        relativeNothing = view.findViewById(R.id.relative_layout_nothing);
+        textZoom = view.findViewById(R.id.text_zoom);
 
+        recyclerViewWeeks.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerViewWeeks.setLayoutManager(linearLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewWeeks.getContext(), linearLayoutManager.getOrientation());
+        recyclerViewWeeks.addItemDecoration(dividerItemDecoration);
+
+    }
+
+    private void fillWeekProgress() {
+        float progress;
+        for (int i = 0; i < db.getEveryWeek().size(); i++) {
+            progressList = db.getProgressFromDB(db.getEveryWeek().get(i).getNumOfWeek());
+            String week = db.getEveryWeek().get(i).getNumOfWeek() + " " + getResources().getString(R.string.w);
+
+            for(int j = 0; j < progressList.size(); j++){
+                progress = progressList.get(j).getProgress();
+                Log.d("PROGRESS", "Progress --- " + progress);
+                entries.add(new BarEntry(i, progress));
+            }
+            labelsNames.add(week);
+        }
     }
 }

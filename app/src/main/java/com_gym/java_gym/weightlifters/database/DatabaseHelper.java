@@ -14,17 +14,26 @@ import java.util.List;
 import com_gym.java_gym.weightlifters.models.Day;
 import com_gym.java_gym.weightlifters.models.Exercise;
 import com_gym.java_gym.weightlifters.models.Program;
+import com_gym.java_gym.weightlifters.models.Progress;
 import com_gym.java_gym.weightlifters.models.Week;
 
-public class DatabaseHelper extends SQLiteOpenHelper{
+public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, ConstantsDB.WEIGHT_LIFTERS_DATABASE_NAME.getDatabaseConstant(), null, 11);
+        super(context, ConstantsDB.WEIGHT_LIFTERS_DATABASE_NAME.getDatabaseConstant(), null, 14);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        String progressTableDescription = "CREATE TABLE " + ConstantsDB.PROGRESS_TABLE.getDatabaseConstant() + " (" +
+                ConstantsDB.COLUMN_PROGRESS_INDEPENDENT_ID.getDatabaseConstant() + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                ConstantsDB.COLUMN_WEEK_ID.getDatabaseConstant() + " INTEGER, " +
+                ConstantsDB.COLUMN_PROGRESS.getDatabaseConstant() + " INTEGER, " +
+                ConstantsDB.COLUMN_PROGRESS_SETS.getDatabaseConstant() + " INTEGER, " +
+                ConstantsDB.COLUMN_PROGRESS_REPETITION.getDatabaseConstant() + " INTEGER, " +
+                ConstantsDB.COLUMN_PROGRESS_WEIGHT.getDatabaseConstant() + " INTEGER)";
 
         String weekTableDescription = "CREATE TABLE " + ConstantsDB.WEEK_TABLE.getDatabaseConstant() + " (" +
                 ConstantsDB.COLUMN_WEEK_ID.getDatabaseConstant() + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -53,6 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 ConstantsDB.COLUMN_PROGRAM_TITLE.getDatabaseConstant() + " TEXT)";
 
         db.execSQL(programTableDescription);
+        db.execSQL(progressTableDescription);
         db.execSQL(dayProgramExerciseTableDescription);
         db.execSQL(weekTableDescription);
         db.execSQL(programExerciseTableDescription);
@@ -66,11 +76,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + ConstantsDB.WEEK_TABLE.getDatabaseConstant());
         db.execSQL("DROP TABLE IF EXISTS " + ConstantsDB.PROGRAM_EXERCISE_TABLE.getDatabaseConstant());
         db.execSQL("DROP TABLE IF EXISTS " + ConstantsDB.DAY_PROGRAM_EXERCISE_TABLE.getDatabaseConstant());
+        db.execSQL("DROP TABLE IF EXISTS " + ConstantsDB.PROGRESS_TABLE.getDatabaseConstant());
         //create table again
         onCreate(db);
     }
 
-    public boolean addWeek(Week week){
+    public boolean addWeek(Week week) {
 
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValuesWeek = new ContentValues();
@@ -79,9 +90,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         contentValuesWeek.put(ConstantsDB.COLUMN_WEEK_SNAP.getDatabaseConstant(), week.getImg());
 
         long insertionWeek = database.insert(ConstantsDB.WEEK_TABLE.getDatabaseConstant(), null, contentValuesWeek);
-        if(insertionWeek == -1){
+        if (insertionWeek == -1) {
             return false;
-        }else{
+        } else {
             return true;
         }
 
@@ -108,20 +119,20 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
     }
 
-    public List<Week> getEveryWeek(){
+    public List<Week> getEveryWeek() {
         List<Week> returningListWeeks = new ArrayList<>();
         SQLiteDatabase database = this.getReadableDatabase();
         String queryWeek = "SELECT * FROM " + ConstantsDB.WEEK_TABLE.getDatabaseConstant();
         Cursor cursor = database.rawQuery(queryWeek, null);
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 int idWeek = cursor.getInt(0);
                 String image = cursor.getString(1);
                 String done = cursor.getString(2);
                 Week week = new Week(idWeek, done, image);
                 returningListWeeks.add(week);
 
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         cursor.close();
         database.close();
@@ -136,9 +147,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         long insertionProgram = database.insert(ConstantsDB.PROGRAM_TABLE.getDatabaseConstant(), null, contentValues);
 
-        if(insertionProgram == -1){
+        if (insertionProgram == -1) {
             return false;
-        }else{
+        } else {
             return true;
         }
 
@@ -159,15 +170,15 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         long insertionExercise = database.insert(ConstantsDB.PROGRAM_EXERCISE_TABLE.getDatabaseConstant(), null, contentValues);
 
-        if(insertionExercise == -1){
+        if (insertionExercise == -1) {
             return false;
-        }else {
+        } else {
             return true;
         }
 
     }
 
-    public boolean addDay(Day day){
+    public boolean addDay(Day day) {
 
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValuesDay = new ContentValues();
@@ -178,9 +189,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         contentValuesDay.put(ConstantsDB.COLUMN_PROGRAM_TITLE.getDatabaseConstant(), day.getTitleProgram());
 
         long insertionDay = database.insert(ConstantsDB.DAY_PROGRAM_EXERCISE_TABLE.getDatabaseConstant(), null, contentValuesDay);
-        if(insertionDay == -1){
+        if (insertionDay == -1) {
             return false;
-        }else{
+        } else {
             return true;
         }
 
@@ -193,8 +204,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         String queryDay = "SELECT * FROM " + ConstantsDB.DAY_PROGRAM_EXERCISE_TABLE.getDatabaseConstant() + " WHERE " + ConstantsDB.COLUMN_WEEK_ID.getDatabaseConstant() + " == " + idWeekIntent;
 
         Cursor cursor = database.rawQuery(queryDay, null);
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 int idDay = cursor.getInt(0);
                 int idWeek = cursor.getInt(1);
                 int idProgram = cursor.getInt(2);
@@ -202,7 +213,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 String titleProgram = cursor.getString(4);
                 Day day = new Day(idDay, idWeek, idProgram, dayOfWeek, titleProgram);
                 returningList.add(day);
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -211,6 +222,120 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     }
 
 
+    // add progress
+    public boolean addProgress(Progress progress){
+
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues contentValuesProgress = new ContentValues();
+
+        contentValuesProgress.put(ConstantsDB.COLUMN_WEEK_ID.getDatabaseConstant(), progress.getIdWeek());
+        contentValuesProgress.put(ConstantsDB.COLUMN_PROGRESS.getDatabaseConstant(), progress.getProgress());
+        contentValuesProgress.put(ConstantsDB.COLUMN_PROGRESS_WEIGHT.getDatabaseConstant(), progress.getWeight());
+        contentValuesProgress.put(ConstantsDB.COLUMN_PROGRESS_SETS.getDatabaseConstant(), progress.getSet());
+        contentValuesProgress.put(ConstantsDB.COLUMN_PROGRESS_REPETITION.getDatabaseConstant(), progress.getRep());
+
+        long insertionDay = database.insert(ConstantsDB.PROGRESS_TABLE.getDatabaseConstant(), null, contentValuesProgress);
+        if (insertionDay == -1) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
+    public List<Progress> getProgressFromDB(int idWeek){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        List<Progress> returningList = new ArrayList<>();
+        String queryProgress = "SELECT * FROM " + ConstantsDB.PROGRESS_TABLE.getDatabaseConstant() + " WHERE "
+                + ConstantsDB.COLUMN_WEEK_ID.getDatabaseConstant() + " == " + idWeek;
+        Cursor cursorProgress = sqLiteDatabase.rawQuery(queryProgress, null);
+        if(cursorProgress.moveToFirst()){
+            do{
+                int independentId = cursorProgress.getInt(0);
+                int weekId = cursorProgress.getInt(1);
+                float progressForm = cursorProgress.getFloat(2);
+                int sets = cursorProgress.getInt(3);
+                int repetition = cursorProgress.getInt(4);
+                int weight = cursorProgress.getInt(5);
+
+                Progress progress = new Progress(weekId, progressForm, sets, repetition, weight);
+                returningList.add(progress);
+
+            }while(cursorProgress.moveToNext());
+        }
+        cursorProgress.close();
+        sqLiteDatabase.close();
+        return returningList;
+    }
+
+    //update progress
+    public boolean updateProgress(String row_id, float progress){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(ConstantsDB.COLUMN_PROGRESS.getDatabaseConstant(), progress);
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ConstantsDB.PROGRESS_TABLE.getDatabaseConstant() + " WHERE " + ConstantsDB.COLUMN_PROGRESS_INDEPENDENT_ID.getDatabaseConstant() + "=?", new String[]{row_id});
+        if (cursor.getCount() > 0) {
+            long result = db.update(ConstantsDB.PROGRESS_TABLE.getDatabaseConstant(), cv, ConstantsDB.COLUMN_PROGRESS_INDEPENDENT_ID.getDatabaseConstant() + "=?", new String[]{row_id});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+
+    }
+
+    public List<Exercise> getEveryDayAndExercise(int idWeekIntent) {
+
+        List<Exercise> returningList = new ArrayList<>();
+        SQLiteDatabase database = this.getReadableDatabase();
+        String queryDay = "SELECT * FROM " + ConstantsDB.DAY_PROGRAM_EXERCISE_TABLE.getDatabaseConstant() + " WHERE " + ConstantsDB.COLUMN_WEEK_ID.getDatabaseConstant() +
+                " == " + idWeekIntent;
+
+        String queryExercise = null;
+        Cursor cursorExercise = null;
+
+        Cursor cursor = database.rawQuery(queryDay, null);
+        if (cursor.moveToFirst()) {
+            do {
+
+                int idProgram = cursor.getInt(2);
+
+                queryExercise = "SELECT * FROM " + ConstantsDB.PROGRAM_EXERCISE_TABLE.getDatabaseConstant() + " WHERE " +
+                        ConstantsDB.COLUMN_EXERCISE_ID.getDatabaseConstant() + " == " + idProgram;
+
+                cursorExercise = database.rawQuery(queryExercise, null);
+                if (cursorExercise.moveToFirst()) {
+                    do {
+                        int idIndependent = cursorExercise.getInt(0);
+                        int idEx = cursorExercise.getInt(2);
+                        String titleProgram = cursorExercise.getString(3);
+                        String titleExercise = cursorExercise.getString(4);
+                        String weight = cursorExercise.getString(5);
+                        String set = cursorExercise.getString(6);
+                        String repetition = cursorExercise.getString(7);
+
+                        Exercise exercise = new Exercise(idIndependent, idProgram, idEx, titleProgram, titleExercise, weight, set, repetition);
+                        returningList.add(exercise);
+
+
+                    } while (cursorExercise.moveToNext());
+                }
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+        cursorExercise.close();
+        database.close();
+        return returningList;
+    }
+
     public List<Program> getEveryProgram() {
 
         List<Program> returningList = new ArrayList<>();
@@ -218,13 +343,13 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         String queryProgram = "SELECT * FROM " + ConstantsDB.PROGRAM_TABLE.getDatabaseConstant();
 
         Cursor cursor = database.rawQuery(queryProgram, null);
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 int idProgram = cursor.getInt(0);
                 String titleProgram = cursor.getString(1);
                 Program program = new Program(idProgram, titleProgram);
                 returningList.add(program);
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -239,8 +364,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 ConstantsDB.COLUMN_EXERCISE_ID.getDatabaseConstant() + " == " + idExercise;
 
         Cursor cursor = database.rawQuery(queryExercise, null);
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 int idIndependent = cursor.getInt(0);
                 int idProgram = cursor.getInt(1);
                 int idEx = cursor.getInt(2);
@@ -253,7 +378,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 Exercise exercise = new Exercise(idIndependent, idProgram, idEx, titleProgram, titleExercise, weight, set, repetition);
                 returningList.add(exercise);
 
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -263,7 +388,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     }
 
     //update program
-    public boolean updateProgram(String row_id, String title){
+    public boolean updateProgram(String row_id, String title) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -284,8 +409,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     }
 
-     //update exercise
-     public boolean updateExercise(String row_id, String titleEx, String weightEx, String setsEx, String repetitionEx) {
+    //update exercise
+    public boolean updateExercise(String row_id, String titleEx, String weightEx, String setsEx, String repetitionEx) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
