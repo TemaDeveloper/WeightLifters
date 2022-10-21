@@ -78,7 +78,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:text="@string/edit_program_title"
                 app:icon="@drawable/ic_edit"
                 app:iconTint="@color/white"
                 android:textColor="@color/white"

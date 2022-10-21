@@ -3,6 +3,7 @@ package com_gym.java_gym.weightlifters.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -18,7 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private TextView textTitleCreator, textAppName;
     private CircleImageView imageLogo;
-
+    private SharedPreferences mSharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +63,17 @@ public class SplashScreenActivity extends AppCompatActivity {
                         textTitleCreator.setVisibility(View.GONE);
                         textAppName.setVisibility(View.GONE);
                         imageLogo.setVisibility(View.GONE);
-                        startActivity(new Intent(getApplicationContext(), OnBoardingActivity.class));
+
+                        mSharedPref = getSharedPreferences("SP_ONBOARDING", MODE_PRIVATE);
+                        boolean isFirstTime = mSharedPref.getBoolean("firstTime", true);
+
+                        if(isFirstTime){
+                            SharedPreferences.Editor editor = mSharedPref.edit();
+                            editor.putBoolean("firstTime", false);
+                            editor.commit();
+                            startActivity(new Intent(getApplicationContext(), OnBoardingActivity.class));
+                        }else
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }
 

@@ -1,6 +1,7 @@
 package com_gym.java_gym.weightlifters.onBoarding;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -37,6 +38,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         mList.add(new Slide(getResources().getString(R.string.title_1), getResources().getString(R.string.description_1), R.raw.lottie_anim_bridge_female, "01."));
         mList.add(new Slide(getResources().getString(R.string.title_2), getResources().getString(R.string.description_2), R.raw.lottie_anim_plank_male, "02."));
         mList.add(new Slide(getResources().getString(R.string.title_3), getResources().getString(R.string.description_3), R.raw.lottie_anim_deadbug_female, "03."));
+
 
         adapterSliderSlides = new OnBoardingAdapterSlider(this, mList);
         viewPagerSlide.setAdapter(adapterSliderSlides);
